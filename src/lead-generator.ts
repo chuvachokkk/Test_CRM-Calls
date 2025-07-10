@@ -1,4 +1,4 @@
-import { Lead } from './types/lead'
+import { Lead } from './types/lead.js'
 
 export class LeadGenerator {
 	private categories = ['sport', 'finance', 'it', 'health', 'other']

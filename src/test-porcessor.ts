@@ -1,19 +1,19 @@
-import { LeadProcessor } from './lead-processor'
-import { Logger } from './logger'
-import { Lead } from './types/lead'
+import { LeadProcessor } from './lead-processor.js';
+import { Logger } from './logger.js';
+import { Lead } from './types/lead.js';
 
-const logger = new Logger('test-log.csv')
-const processor = new LeadProcessor(logger)
+const logger = new Logger('test-log.csv');
+const processor = new LeadProcessor(logger);
 
-const testLead: Lead = { id: '1', category: 'it', payload: {} }
+const testLead: Lead = { id: '1', category: 'it', payload: {} };
 
 processor
 	.processLead(testLead)
 	.then(() => {
-		logger.close()
-		console.log('Lead processed!')
+		logger.close();
+		console.log('Lead processed!');
 	})
-	.catch(err => {
-		logger.close()
-		console.error('Error:', err.message)
-	})
+	.catch((err) => {
+		logger.close();
+		console.error('Error:', err.message);
+	});

@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  lead-processor:
+    build: .
+    container_name: crm-lead-processor
+    volumes:
+      - ./logs:/app/logs
+    environment:
+      - NODE_ENV=production
+    restart: unless-stopped
